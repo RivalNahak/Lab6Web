@@ -1,0 +1,72 @@
+:root {
+  --biru: #173f75;
+  --biru-muda: #e6f1ff;
+  --aksen: #3478c8;
+  --teks: #1f2937;
+  --abu: #687386;
+  --salah: #b42318;
+  --benar: #067647;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  color: var(--teks);
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+  line-height: 1.55;
+}
+h1 { color: var(--biru); margin-bottom: 4px; }
+h2 { color: var(--biru); font-size: 1.15rem; margin: 0 0 12px; }
+section {
+  border-top: 2px solid var(--biru-muda);
+  padding: 20px 0;
+}
+label { display: block; font-weight: 600; margin: 12px 0 4px; }
+input, select, textarea {
+  width: 100%;
+  max-width: 420px;
+  padding: 9px 10px;
+  font: inherit;
+  border: 1px solid #b8c2d0;
+  border-radius: 6px;
+}
+input:focus-visible, select:focus-visible, textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--aksen);
+  outline-offset: 2px;
+}
+button {
+  font: inherit;
+  padding: 9px 16px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--biru);
+  color: #fff;
+  cursor: pointer;
+}
+button:hover { background: var(--aksen); }
+button.sekunder { background: #fff; color: var(--biru); border: 1px solid var(--biru); }
+
+/* Latihan 3 */
+.highlight {
+  color: #173f75;
+  background-color: #e6f1ff;
+  border-left: 4px solid #3478c8;
+  padding: 12px;
+}
+.teks-besar { font-size: 1.4rem; }
+
+/* Eksperimen 4 */
+.tersembunyi { display: none; }
+
+/* Pesan form */
+.pesan-error { color: var(--salah); font-weight: 600; }
+.pesan-sukses { color: var(--benar); font-weight: 600; }
+
+/* Latihan 6 */
+.selesai span { text-decoration: line-through; color: #687386; }
+li { margin-bottom: 8px; }
+li button { margin-top: 0; margin-left: 6px; padding: 4px 10px; font-size: 0.9rem; }
+li button.hapus { background: var(--salah); }

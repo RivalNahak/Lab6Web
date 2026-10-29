@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran Workshop</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="halaman">
+    <section class="panel-form">
+      <h1>Daftar Workshop Web</h1>
+      <p class="intro">Isi data di bawah, lalu pilih sesi yang ingin diikuti.</p>
+
+      <form id="formWorkshop" novalidate>
+        <div class="field">
+          <label for="nama">Nama lengkap</label>
+          <input id="nama" name="nama" type="text" autocomplete="name" aria-describedby="errNama">
+          <p class="error" id="errNama" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" aria-describedby="errEmail">
+          <p class="error" id="errEmail" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="sesi">Sesi workshop</label>
+          <select id="sesi" name="sesi" aria-describedby="errSesi infoSesi">
+            <option value="">-- Pilih sesi --</option>
+            <option value="html">Sesi 1: HTML dan CSS dasar</option>
+            <option value="js">Sesi 2: JavaScript DOM</option>
+            <option value="deploy">Sesi 3: Deploy ke GitHub Pages</option>
+          </select>
+          <p class="info" id="infoSesi"></p>
+          <p class="error" id="errSesi" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="catatan">Catatan untuk panitia (opsional)</label>
+          <textarea id="catatan" name="catatan" rows="3" maxlength="120"></textarea>
+          <p class="info">Jumlah karakter: <span id="jumlahCatatan">0</span>/120</p>
+        </div>
+
+        <div class="aksi">
+          <button type="submit">Daftar</button>
+          <button type="reset" id="tombolReset" class="sekunder">Hapus isian</button>
+        </div>
+        <p id="pesanForm" class="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <aside class="panel-ringkasan" aria-label="Ringkasan isian">
+      <h2>Ringkasan</h2>
+      <dl>
+        <dt>Nama</dt><dd id="rNama">-</dd>
+        <dt>Email</dt><dd id="rEmail">-</dd>
+        <dt>Sesi</dt><dd id="rSesi">-</dd>
+        <dt>Catatan</dt><dd id="rCatatan">-</dd>
+      </dl>
+    </aside>
+  </main>
+</body>
+</html>

@@ -1,0 +1,82 @@
+:root {
+  --biru: #173f75;
+  --biru-muda: #e6f1ff;
+  --aksen: #3478c8;
+  --teks: #1f2937;
+  --abu: #5b6577;
+  --salah: #b42318;
+  --benar: #067647;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  color: var(--teks);
+  background: #f6f8fb;
+  line-height: 1.55;
+}
+.halaman {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.panel-form, .panel-ringkasan {
+  background: #fff;
+  border: 1px solid #dbe3ee;
+  border-radius: 10px;
+  padding: 24px;
+}
+.panel-ringkasan { background: var(--biru-muda); border-color: #c5dbf7; position: sticky; top: 16px; }
+h1 { margin: 0 0 4px; color: var(--biru); font-size: 1.6rem; }
+h2 { margin: 0 0 12px; color: var(--biru); font-size: 1.1rem; }
+.intro { margin: 0 0 16px; color: var(--abu); }
+
+.field { margin-bottom: 14px; }
+label { display: block; font-weight: 600; margin-bottom: 4px; }
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  font: inherit;
+  border: 1px solid #b8c2d0;
+  border-radius: 6px;
+  background: #fff;
+}
+input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--salah); }
+input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible {
+  outline: 3px solid var(--aksen);
+  outline-offset: 2px;
+}
+.error { margin: 4px 0 0; min-height: 1.2em; color: var(--salah); font-size: 0.9rem; font-weight: 600; }
+.info { margin: 4px 0 0; color: var(--abu); font-size: 0.9rem; }
+
+.aksi { display: flex; gap: 10px; flex-wrap: wrap; }
+button {
+  font: inherit;
+  padding: 10px 18px;
+  border: 1px solid var(--biru);
+  border-radius: 6px;
+  background: var(--biru);
+  color: #fff;
+  cursor: pointer;
+}
+button:hover { background: var(--aksen); border-color: var(--aksen); }
+button.sekunder { background: #fff; color: var(--biru); }
+button.sekunder:hover { background: var(--biru-muda); }
+
+.status { margin: 14px 0 0; font-weight: 600; }
+.status.sukses { color: var(--benar); }
+.status.gagal { color: var(--salah); }
+
+dl { margin: 0; }
+dt { font-size: 0.85rem; color: var(--abu); margin-top: 10px; }
+dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+
+@media (max-width: 720px) {
+  .halaman { grid-template-columns: 1fr; }
+  .panel-ringkasan { position: static; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
